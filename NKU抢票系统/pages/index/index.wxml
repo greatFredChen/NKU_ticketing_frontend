@@ -1,0 +1,12 @@
+<view class='index-container'>
+
+<view class='index-pic'>
+  <image class='pic' src='../../images/startpic.png' mode="widthFix"></image>
+</view>
+</view>
+<view class='button-container'>
+   <button class='index-button' hover-class='bar-button__hover'  open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>我要抢票</button>
+<view class='container'>
+   <view class='instruction-title' bindtap='Publish'>我要发布</view>
+</view>
+</view>

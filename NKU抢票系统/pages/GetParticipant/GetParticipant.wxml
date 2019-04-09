@@ -1,0 +1,25 @@
+<!--pages/GetParticipant/GetParticipant.wxml-->
+<view class='full-width activity-general' wx:for='{{UserList}}'>
+ <view class='activity-container'>
+  <view class='card-button'>
+    <view>
+      <view class='content info-text'>
+        <text>序列号:{{item.serial_number}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>昵称:{{item.user_name}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>抢票时间:{{item.fetch_time}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>用户id:{{item.user_id}}</text>
+      </view>           
+    </view>
+  </view>
+ </view>
+ </view>
+
+ <view class='bottom-button'>
+   <button class='bar-button' hover-class='bar-button__hover' bindtap='Return'>返回</button>
+ </view>

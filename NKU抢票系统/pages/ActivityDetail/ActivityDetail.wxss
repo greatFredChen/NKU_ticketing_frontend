@@ -1,0 +1,123 @@
+/* pages/ActivityDetail/ActivityDetail.wxss */
+/*.article-info-container{
+  text-align: center;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  height:160rpx;
+  width:100%;
+}
+
+.article-container {
+  text-align: center;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-left:40rpx;
+}*/
+
+.full-wide-button {
+  width:100%;
+  text-align: center;
+  font-size: 40rpx;
+  background-color:white;
+  color: black;
+}
+
+.card-background {
+  position: fixed;
+  top: 0px;
+  background-color: #7a0c6e;
+  width: 100%;
+  height: 33%;
+  text-align: center;
+}
+
+.card-char {
+  position:relative;
+  color: white;
+  font-size: 80rpx;
+  top:75rpx;
+}
+
+.card-info {
+  position: relative;
+  margin-top: 260rpx;
+  width: 82%;
+  background-color: white;
+  color: black;
+  padding: 20rpx 30rpx 20rpx 50rpx;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+}
+
+.content {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.info-text {
+  font-size:32rpx;
+  color: black;
+  font-weight: bold;
+  line-height: 32rpx;
+}
+
+.introduction-title {
+  margin-left: 25rpx;
+  border-left-width: 10rpx;
+  border-left-style: solid;
+  border-left-color: #7a0c6e;
+  position: relative;
+  margin-top: 30rpx;
+}
+
+.introduction-char {
+  font-weight: bold;
+  font-size: 40rpx;
+  margin-left:30rpx;
+}
+
+.bottom-right {
+  margin-top: 20rpx;
+  text-align: right;
+  margin-right:20rpx;
+}
+
+.bottom-right-char {
+  font-size: 32rpx;
+  color: #7a0c6e;
+  line-height: 32rpx;
+  text-decoration: underline;
+}
+
+.introduction {
+  margin-top: 32rpx;
+  text-indent: 64rpx;
+  width: 90%;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bottom-button {
+  width:80%;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: 64rpx;
+}
+
+.bottom-button_2 {
+  width:80%;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: 40rpx;
+  margin-bottom: 64rpx;
+}
+
+.white-button {
+  background-color: white;
+  color: black;
+}

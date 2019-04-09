@@ -1,0 +1,21 @@
+<view class='index-pic'>
+    <image class='pic' src='../../images/organizer.png' mode="widthFix">
+      <view class='credential'>
+        <text class='credential-char'>组织账号:{{List.org_info.credential}}</text>
+      </view>
+    </image>
+</view>
+
+<view class='button-orgainzer'>
+  <button class='full-wide-button' bindtap='GetPublished'>我发布的活动</button>
+</view>
+
+
+<view class='bottom'>
+<i-tab-bar current="{{ current }}" bindchange="handleChange">
+    <i-tab-bar-item key="Activity" title="活动"></i-tab-bar-item>
+    <i-tab-bar-item key="Access" title="活动申请"></i-tab-bar-item>
+    <i-tab-bar-item key="Organizer" title="我的"></i-tab-bar-item>
+    <i-tab-bar-item key="index" title="返回主界面"></i-tab-bar-item>
+</i-tab-bar>
+</view>

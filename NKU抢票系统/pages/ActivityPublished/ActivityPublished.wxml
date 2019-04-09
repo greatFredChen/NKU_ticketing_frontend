@@ -1,0 +1,24 @@
+<view class='full-width activity-general' wx:for='{{List}}'>
+ <view class='activity-container'>
+  <button class='card-button' id='{{item.id}}' bindtap='viewDetail' hover-class='card-button-press'>
+    <view>
+      <view class='content info-text'>
+        <text>活动名称:{{item.activity_name}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>抢票开始时间:{{item.ticketing_start_at}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>抢票结束时间:{{item.ticketing_end_at}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>地点:{{item.location}}</text>
+      </view>      
+    </view>
+  </button>
+ </view>
+ </view>
+
+ <view class='bottom-button'>
+   <button class='bar-button' hover-class='bar-button__hover' bindtap='Back'>返回</button>
+ </view>

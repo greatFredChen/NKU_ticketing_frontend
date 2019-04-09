@@ -1,0 +1,28 @@
+<!--pages/ticketList/ticketList.wxml-->
+<view class='full-width activity-general' wx:for='{{TicketList}}'>
+ <view class='activity-container'>
+  <view class='card-button'>
+    <view>
+      <view class='content info-text'>
+        <text>活动名称:{{item.activity_name}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>抢票时间:{{item.fetch_time}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>用户id:{{item.user_id}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>序列号:{{item.serial_number}}</text>
+      </view>
+      <view class='bottom-right' bindtap='ReturnTicket' id='{{item.ticket_id}}'>
+        <text class='bottom-right-char'>退票</text>
+      </view>            
+    </view>
+  </view>
+ </view>
+ </view>
+
+<view class='bottom-button'>
+  <button class='bar-button' hover-class='bar-button__hover' bindtap='Return'>返回上一页</button>
+</view>

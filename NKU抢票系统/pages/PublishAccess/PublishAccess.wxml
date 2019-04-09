@@ -1,0 +1,91 @@
+<view class='activity-info'>
+  <view class='info-row-flex'>
+    <text class='info-title'>活动信息</text>
+    <text class='Eng-title'>Activity Information</text>
+  </view>
+  <view class='white-line'></view>
+  <view class='input-row-flex content'>
+    <text class='info-text'>活动名称:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' bindinput='bindActivityName'></input>
+  </view>
+  <view class='input-row-flex content'>
+    <text class='info-text'>活动种类:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' bindinput='bindCategory'></input>
+  </view>
+  <view class='input-row-flex content'>
+    <text class='info-text'>活动人数:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' bindinput='bindMaxPeople'></input>
+  </view>
+  <view class='input-row-flex content'>
+    <text class='info-text'>活动地点:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' bindinput='bindLocation'></input>
+  </view>  
+</view>
+
+<view class='time-choice'>
+  <view class='info-row-flex'>
+    <text class='time-title'>时间选择</text>
+    <text class='Eng-title'>Time Choice</text>
+  </view>
+  <view class='grey-line'></view>
+  <view class='input-row-flex time-content'>
+    <text class='time-text'>抢票开始时间:</text>
+    <picker mode='date' value="{{ticketStartDate}}" start="2018-01-01" end="2036-12-31" bindchange='bindTicketStartDate'>
+   <view class="picker">{{ticketStartDate}}</view>
+    </picker>
+    <picker mode='time' value="{{ticketStartTime}}" start="00:00" end="23:59" bindchange='bindTicketStartTime'>
+      <view class="picker">{{ticketStartTime}}</view>
+    </picker>
+  </view>
+  <view class='input-row-flex time-content'>
+    <text class='time-text'>抢票结束时间:</text>
+    <picker mode='date' value="{{ticketEndDate}}" start="2018-01-01" end="2036-12-31" bindchange='bindTicketEndDate'>
+      <view class="picker">{{ticketEndDate}}</view>
+    </picker>
+    <picker mode='time' value="{{ticketEndTime}}" start="00:00" end="23:59" bindchange='bindTicketEndTime'>
+      <view class="picker">{{ticketEndTime}}</view>
+    </picker>
+  </view>
+  <view class='input-row-flex time-content'>
+    <text class='time-text'>活动开始时间:</text>
+    <picker mode='date' value="{{AcitvityStartDate}}" start="2018-01-01" end="2036-12-31" bindchange='bindActivityStartDate'>
+      <view class="picker">{{ActivityStartDate}}</view>
+    </picker>
+    <picker mode='time' value="{{ActivityStartTime}}" start="00:00" end="23:59" bindchange='bindActivityStartTime'>
+      <view class="picker">{{ActivityStartTime}}</view>
+    </picker>  
+  </view>
+  <view class='input-row-flex time-content'>
+    <text class='time-text'>活动结束时间:</text>
+    <picker mode='date' value="{{AcitvityEndDate}}" start="2018-01-01" end="2036-12-31" bindchange='bindActivityEndDate'>
+      <view class="picker">{{ActivityEndDate}}</view>
+    </picker>
+    <picker mode='time' value="{{AcitvityEndTime}}" start="00:00" end="23:59" bindchange='bindActivityEndTime'>
+      <view class="picker">{{ActivityEndTime}}</view>
+    </picker>    
+  </view>
+</view>
+
+<view class='time-choice'>
+  <view class='info-row-flex'>
+    <text class='time-title'>活动简介</text>
+    <text class='Eng-title'>Introduction</text>
+  </view>
+  <view class='grey-line'></view>
+  <textarea class='intro-textarea' placeholder='请输入内容' bindinput='bindIntro'></textarea>
+</view>
+
+<view class='button-width'>
+ <button class='bar-button' hover-class='bar-button__hover' bindtap='Check'>
+ <text class='button-char'>确认提交</text>
+ </button>
+</view>
+
+<view class='width'>
+<i-tab-bar current="{{ current }}" bindchange="handleChange">
+    <i-tab-bar-item key="Activity" title="活动"></i-tab-bar-item>
+    <i-tab-bar-item key="Access" title="活动申请"></i-tab-bar-item>
+    <i-tab-bar-item key="Organizer" title="我的"></i-tab-bar-item>
+    <i-tab-bar-item key="index" title="返回主界面"></i-tab-bar-item>
+</i-tab-bar>
+</view>

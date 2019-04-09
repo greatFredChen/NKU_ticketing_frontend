@@ -1,0 +1,23 @@
+<view class='view-flex'>
+<view class='container column-flex'>
+<view class='container'>
+  <image class='logo' src='http://image.potatofield.cn/18-10-24/7129900.jpg'></image>
+</view>
+<view class='container row-flex'>
+  <text>账号:</text>
+  <input class="{{Style=='account'?'publishinput-focus':'publishinput-common'}}" placeholder='请输入账号' maxlength='30' bindinput='bindAccount' bindfocus='changeStyle_one' bindblur='changeStyle_two' id='account'></input>
+</view>
+<view class='container row-flex'>
+   <text>密码:</text>
+   <input class="{{Style=='password'?'publishinput-focus':'publishinput-common'}}" placeholder='请输入密码' maxlength='30' bindinput='bindPassword' password='true' bindfocus='changeStyle_one' bindblur='changeStyle_two' id='password'></input>
+ </view>
+ <view class='container row-flex'>
+  <view class='half'>
+   <button class='bar-button' hover-class='bar-button__hover' bindtap='loginAccess'>确认</button>
+  </view>
+  <view class='half'>
+   <button class='bar-button' hover-class='bar-button__hover'  bindtap='returnToIndex'>返回主界面</button>
+  </view>
+ </view>
+</view>
+</view>

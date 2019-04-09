@@ -1,0 +1,37 @@
+<!--pages/editUserInfo/editUserInfo.wxml-->
+<view class='container'>
+  <image class='logo' src='http://image.potatofield.cn/18-10-24/7129900.jpg'></image>
+</view>
+<view class='activity-info'>
+  <view class='info-row-flex'>
+    <text class='info-title'>注册信息</text>
+    <text class='Eng-title'>Register Information</text>
+  </view>
+  <view class='white-line'></view>
+  <view class='input-row-flex content'>
+    <text class='info-text'>账号:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' bindinput='bindCredential'></input>
+  </view>
+  <view class='input-row-flex content'>
+    <text class='info-text'>邮箱:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' bindinput='bindEmail'></input>
+  </view>
+  <view class='input-row-flex content'>
+    <text class='info-text'>密码:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' password='true' bindinput='bindPassword'></input>
+  </view>
+  <view class='input-row-flex content'>
+    <text class='info-text'>确认密码:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' password='true' bindinput='bindCheckPassword'></input>
+  </view>  
+</view>
+
+<view class='button-width row-flex'>
+  <view class='half'>
+  <button class='bar-button left-button' hover-class='bar-button__hover' bindtap='Check'>确认</button>
+  </view>
+  <view class='half'>
+  <button class='bar-button right-button' hover-class='bar-button__hover' bindtap='Return'>返回</button>
+  </view>
+</view>
+ 

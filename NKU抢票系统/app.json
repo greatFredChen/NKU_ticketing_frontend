@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/Publish/Publish",
+    "pages/Activity/Activity",
+    "pages/User/User",
+    "pages/Organizer/Organizer",
+    "pages/PublishAccess/PublishAccess",
+    "pages/ActivityDetail/ActivityDetail",
+    "pages/ActivityPublished/ActivityPublished",
+    "pages/GetParticipant/GetParticipant",
+    "pages/changeActivity/changeActivity",
+    "pages/editUserInfo/editUserInfo",
+    "pages/ticketList/ticketList"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "学活场地申请系统"
+  }
+}

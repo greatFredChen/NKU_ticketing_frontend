@@ -1,0 +1,27 @@
+<view class='index-pic'>
+    <image class='pic' src='../../images/organizer.png' mode="widthFix"></image>
+    <view class='pic-title'>账号:{{Userinfo.user_info.credential}}</view>
+    <view class='pic-id'>用户id:{{Userinfo.user_info.user_id}}</view>
+    <view class='pic-char-view'>
+    <view class='pic-name'>{{Userinfo.user_info.user_name}}</view>
+    <view class='pic-category'>{{Userinfo.user_info.category}}</view>
+    </view>
+    <view class='button-bottom-right' bindtap='editInfo'>更改个人信息</view>
+</view>
+
+<view class='button-user_one'>
+  <button class='full-wide-button' bindtap='GetTicket'>
+    <view class='view-two'>
+    <text class='button-char'>我抢过的票</text>
+    <text class='button-sym'>>></text>
+    </view>
+  </button>
+</view>
+
+<view class='bottom'>
+<i-tab-bar current="{{ current }}" bindchange="handleChange">
+    <i-tab-bar-item key="Activity" title="活动"></i-tab-bar-item>
+    <i-tab-bar-item key="User" title="我的"></i-tab-bar-item>
+    <i-tab-bar-item key="index" title="返回主界面"></i-tab-bar-item>
+</i-tab-bar>
+</view>

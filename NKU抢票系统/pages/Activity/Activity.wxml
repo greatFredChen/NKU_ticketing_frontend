@@ -1,0 +1,46 @@
+<view class='full-width activity-general' wx:for='{{List}}'>
+ <view class='activity-container'>
+  <button class='card-button' id='{{item.id}}' bindtap='viewDetail' hover-class='card-button-press'>
+    <view>
+      <view class='content info-text'>
+        <text>活动名称:{{item.activity_name}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>抢票开始时间:{{item.ticketing_start_at}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>抢票结束时间:{{item.ticketing_end_at}}</text>
+      </view>
+      <view class='content info-text'>
+        <text>地点:{{item.location}}</text>
+      </view>      
+    </view>
+  </button>
+ </view>
+ </view>
+
+<view class='button-container row-flex'>
+<view class='half'>
+  <button class='bar-button left-button' hover-class='bar-button__hover' bindtap='Prev'>上一页</button>
+</view>
+<view class='half'>
+  <button class='bar-button right-button' hover-class='bar-button__hover' bindtap='Next'>下一页</button>
+</view>
+</view>
+
+<view class='tabbar-style' wx:if='{{User==0}}'>
+<i-tab-bar current="{{ current }}" bindchange="handleChange">
+    <i-tab-bar-item key="Activity" title="活动"></i-tab-bar-item>
+    <i-tab-bar-item key="Access" title="活动申请"></i-tab-bar-item>
+    <i-tab-bar-item key="Organizer" title="我的"></i-tab-bar-item>
+    <i-tab-bar-item key="index" title="返回主界面"></i-tab-bar-item>
+</i-tab-bar>
+</view>
+
+<view class='tabbar-style' wx:else>
+<i-tab-bar current="{{ current }}" bindchange="handleChange">
+    <i-tab-bar-item key="Activity" title="活动"></i-tab-bar-item>
+    <i-tab-bar-item key="User" title="我的"></i-tab-bar-item>
+    <i-tab-bar-item key="index" title="返回主界面"></i-tab-bar-item>
+</i-tab-bar>
+</view>

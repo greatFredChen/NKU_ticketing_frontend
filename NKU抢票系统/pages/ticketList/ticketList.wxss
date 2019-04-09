@@ -1,0 +1,59 @@
+/* pages/ticketList/ticketList.wxss */
+.title {
+  text-align: center;
+  font-size:40rpx;
+  font-weight:bold;
+  color:#000000;
+}
+
+.bottom-button {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
+}
+
+.activity-general {
+  margin-top: 0px;
+}
+
+.activity-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.card-button {
+  border-radius: 28rpx;
+  box-shadow:3rpx 3rpx 5rpx #888888;
+  background-color: white;
+  color: black;
+  padding: 23rpx 35rpx 23rpx 58rpx
+}
+
+.content {
+  margin-top: 21rpx;
+  margin-bottom: 21rpx;
+}
+
+.info-text {
+  font-size:32rpx;
+  color: black;
+  font-weight: bold;
+  line-height: 32rpx;
+}
+
+.bottom-right {
+  text-align: right;
+  margin-right:20rpx;
+}
+
+.bottom-right-char {
+  font-size: 32rpx;
+  color: #7a0c6e;
+  line-height: 12rpx;
+  text-decoration: underline;
+}

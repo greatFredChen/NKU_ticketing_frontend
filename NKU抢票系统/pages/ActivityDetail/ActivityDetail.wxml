@@ -1,0 +1,62 @@
+<!--pages/ActivityDetail/ActivityDetail.wxml-->
+<view class='card-background'>
+  <text class='card-char'>{{List.activity_name}}</text>
+</view>
+
+<view class='card-info'>
+  <view class='content info-text'>
+    <text>最大人数:{{List.max_people}}</text>
+  </view>
+  <view class='content info-text'>
+    <text>抢票开始时间:{{List.ticketing_start_at}}</text>
+  </view>
+  <view class='content info-text'>
+    <text>抢票结束时间:{{List.ticketing_end_at}}</text>
+  </view>
+  <view class='content info-text'>
+    <text>活动开始时间:{{List.start_at}}</text>
+  </view>
+  <view class='content info-text'>
+    <text>活动结束时间:{{List.end_at}}</text>
+  </view>
+  <view class='bottom-right' bindtap='changeActivity' wx:if='{{User==0&&List.organizer_id==org_id}}'>
+    <text class='bottom-right-char'>修改活动信息</text>
+  </view>
+</view>
+
+<view class='introduction-title'>
+    <text class='introduction-char'>活动简介</text>
+</view>
+
+<view class='introduction'>
+    <view>
+      <text class='info-text'>{{List.introduction}}</text>
+    </view>
+  <view class='bottom-right' bindtap='deleteActivity' wx:if='{{User==0&&List.organizer_id==org_id}}'>
+    <text class='bottom-right-char'>删除活动</text>
+  </view>
+</view>
+
+  <view wx:if='{{User==0&&List.organizer_id==org_id}}'>
+  <view class='bottom-button'>
+    <button class='bar-button' hover-class='bar-button__hover' bindtap='GetList'>获取参与的用户名单</button>
+  </view>
+  <view class='bottom-button_2'>
+    <button class='bar-button white-button' hover-class='bar-button__hover' bindtap='returnPrev'>返回上一页</button>
+  </view>
+  </view>
+
+  <view wx:elif='{{User==0&&List.organizer_id!=org_id}}'>
+  <view class='bottom-button'>
+    <button class='bar-button white-button' hover-class='bar-button__hover' bindtap='returnPrev'>返回上一页</button>
+  </view>
+  </view>
+
+  <view wx:else>
+  <view class='bottom-button'>
+    <button class='bar-button' hover-class='bar-button__hover' bindtap='GetTicket'>我要抢票</button>
+  </view>
+  <view class='bottom-button_2'>
+    <button class='bar-button white-button' hover-class='bar-button__hover' bindtap='returnPrev'>返回上一页</button>
+  </view>
+  </view>
