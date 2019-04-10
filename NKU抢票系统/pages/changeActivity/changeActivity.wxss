@@ -171,3 +171,11 @@
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+
+.Categorypicker {
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: white;
+  background-color: #7a0c6e;
+  margin-left:15rpx;
+}

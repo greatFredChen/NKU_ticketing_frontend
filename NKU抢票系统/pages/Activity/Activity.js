@@ -10,7 +10,10 @@ Page({
     List:[],
     User:-1,
     currentPage:1,
-    maxPage:1
+    maxPage:1,
+    searchName:'',
+    categoryArray: ['讲座', '演讲', '宣讲', '其它'],
+    categoryIndex: 0
   },
 
   //切换页面
@@ -148,6 +151,105 @@ Next:function() {
     })
   }
 },
+
+  //搜索栏活动姓名
+  bindActivityName:function(e) {
+    this.setData({
+      searchName:e.detail.value
+    })
+  },
+
+  //搜索栏类别
+  bindCategory:function(e) {
+    this.setData({
+      categoryIndex:e.detail.value
+    })
+  },
+
+  //清空！重置搜索栏
+  Clear:function() {
+    var that=this;
+    this.setData({
+      searchName:'',
+      categoryIndex:0
+    })
+    wx.request({
+      url: "http://localhost:8081/nkutms/org-api/web/activities?page=1",
+      header: {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          List: res.data.data,
+          maxPage: res.data.pages,
+          currentPage:1
+        })
+        that.transformToTime();
+      }
+    })
+  },
+
+  //确认并进入
+  Enter:function() {
+    var that=this;
+    if(!that.strCheck()) {
+      wx.showToast({
+        title: '搜索栏为空或格式不符!',
+        icon: 'none',
+        duration: 1500
+      })       
+    }
+    else {
+      console.log(that.data.searchName)
+    wx.request({
+      url: 'http://localhost:8081/nkutms/org-api/web/activities/search',
+      header: {
+        "content-type": "application/x-www-form-urlencoded"
+      },
+      method:'POST',
+      data: {
+        name:that.data.searchName,
+        category:that.data.categoryIndex
+      },
+      success:function(res) {
+        console.log(res);
+        var List=res.data.data;
+        var del=[];
+        for(var i=0;i<List.length;i++) {
+          if(List[i].status=='待审核') {
+            del.push(i);
+          }
+        }
+        for(var i=0;i<del.length;i++) {
+          List.splice(del[i],1);
+        }
+        that.setData({
+          List: List,
+          maxPage:res.data.pages,
+          currentPage: 1
+        })
+        that.transformToTime();        
+      },
+      fail:function() {
+        wx.showToast({
+          title: '连接失败',
+          icon: 'none',
+          duration: 1500
+        })        
+      }   
+    })
+    }
+  },
+  
+  //利用正则进行检查
+  strCheck:function() {
+    var that = this;
+    //字符串不得包含无法parse的字符 必要项只能写中文 英文 数字和下划线 且不得为空！
+    var strReg = /^([\u4E00-\u9FA5]|[\uFE30-\uFFA0]|[a-zA-Z0-9_]){1,}$/;
+    return strReg.test(that.data.searchName);
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

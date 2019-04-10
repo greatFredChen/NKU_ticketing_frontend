@@ -17,9 +17,11 @@ Page({
   onLoad: function (options) {
     var that=this;
     that.setData({
-      nickname:options.nickname,
+      nickname: options.nickname,
       code:options.code
     })
+    console.log(that.data.code);
+    console.log(that.data.nickname)
   },
 
 //账号

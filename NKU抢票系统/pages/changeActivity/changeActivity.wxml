@@ -11,7 +11,9 @@
   </view>
   <view class='input-row-flex content'>
     <text class='info-text'>活动种类:</text>
-    <input class='Input' placeholder='请输入内容' maxlength='30' bindinput='bindCategory' value='{{Activity_category}}'></input>
+    <picker value="{{categoryIndex}}" bindchange='bindCategory' range="{{categoryArray}}">
+   <view class="Categorypicker">{{categoryArray[categoryIndex]}}</view>
+    </picker>
   </view>
   <view class='input-row-flex content'>
     <text class='info-text'>活动人数:</text>
@@ -73,7 +75,7 @@
     <text class='Eng-title'>Introduction</text>
   </view>
   <view class='grey-line'></view>
-  <textarea class='intro-textarea' placeholder='请输入内容' bindinput='bindIntro'></textarea>
+  <textarea class='intro-textarea' placeholder='请输入内容' value='{{Introduction}}' bindinput='bindIntro'></textarea>
 </view>
 
 <view class='button-container row-flex'>

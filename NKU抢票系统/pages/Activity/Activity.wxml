@@ -1,3 +1,33 @@
+<view class='full-width activity-general'>
+<view class='activity-container'>
+<view class='card-search'>
+  <view class='info-row-flex'>
+    <text class='info-title'>搜索活动</text>
+    <text class='Eng-title'>Search</text>
+  </view>
+  <view class='white-line'></view>
+  <view class='input-row-flex content'>
+    <text class='search-text'>活动名称:</text>
+    <input class='Input' placeholder='请输入内容' maxlength='30' bindinput='bindActivityName' value='{{searchName}}'></input>
+  </view>
+  <view class='input-row-flex content'>
+    <text class='search-text'>活动种类:</text>
+    <picker value="{{categoryIndex}}" bindchange='bindCategory' range="{{categoryArray}}">
+   <view class="Categorypicker">{{categoryArray[categoryIndex]}}</view>
+    </picker>
+  </view>
+  <view class='search-button-container row-flex'>
+    <view class='half'>
+      <button class='search-bar-button left-button' hover-class='bar-button__hover' bindtap='Enter'>搜索</button>
+    </view>
+    <view class='half'>
+      <button class='search-bar-button right-button' hover-class='bar-button__hover' bindtap='Clear'>清空</button>
+    </view>
+  </view>
+</view>
+</view>
+</view>
+
 <view class='full-width activity-general' wx:for='{{List}}'>
  <view class='activity-container'>
   <button class='card-button' id='{{item.id}}' bindtap='viewDetail' hover-class='card-button-press'>

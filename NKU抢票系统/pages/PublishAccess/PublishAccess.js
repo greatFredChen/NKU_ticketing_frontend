@@ -18,7 +18,9 @@ Page({
     Activity_category:"",
     max_people:"",
     Location:"",
-    Introduction:""
+    Introduction:"",
+    categoryArray:['讲座','演讲','宣讲','其它'],
+    categoryIndex:0
   },
 
   //切换页面
@@ -113,10 +115,10 @@ Page({
       Activity_name:e.detail.value
     })
   },
-
+  //category picker组件！
   bindCategory:function(e) {
     this.setData({
-      Activity_category:e.detail.value
+      categoryIndex:e.detail.value
     })
   },
 
@@ -165,6 +167,13 @@ Page({
         duration: 1500
       })
     }
+    else if(!that.timeCheck()) {
+      wx.showToast({
+        title: '时间设置出现问题!',
+        icon: 'none',
+        duration: 1500
+      })      
+    }
     else {
     //计算成时间戳
     var ticketStart=new Date(that.data.ticketStartDate+" "+that.data.ticketStartTime+":00").getTime()/1000;
@@ -180,7 +189,7 @@ Page({
       data: {
         org_id:that.data.Userinfo.org_info.id,
         activity_name:that.data.Activity_name,
-        category:that.data.Activity_category,
+        category:that.data.categoryIndex,
         location:that.data.Location,
         ticketing_start_at:ticketStart,
         ticketing_end_at:ticketEnd,
@@ -222,8 +231,7 @@ Page({
     var that=this;
     //字符串不得包含无法parse的字符 必要项只能写中文 英文 数字和下划线 且不得为空！
     var strReg =/^([\u4E00-\u9FA5]|[\uFE30-\uFFA0]|[a-zA-Z0-9_]){1,}$/;
-    return strReg.test(that.data.Activity_name)&&strReg.test(that.data.Activity_category)
-    &&strReg.test(that.data.Location);
+    return strReg.test(that.data.Activity_name)&&strReg.test(that.data.Location);
   },
 
   //字符串检查2 检查简介
@@ -236,10 +244,25 @@ Page({
   //字符串检查3 检查最大人数
   strCheck_three: function () {
     var that = this;
-    var strReg = /^[0-9]{1,5}$/
+    var strReg = /^[0-9]{1,4}$/
     return strReg.test(that.data.max_people)
   },
 
+  timeCheck:function() {
+    var that=this;
+    var ticketStart = new Date(that.data.ticketStartDate + " " + that.data.ticketStartTime + ":00").getTime() / 1000;
+    var ticketEnd = new Date(that.data.ticketEndDate + " " + that.data.ticketEndTime + ":00").getTime() / 1000;
+    var ActivityStart = new Date(that.data.ActivityStartDate + " " + that.data.ActivityStartTime + ":00").getTime() / 1000;
+    var ActivityEnd = new Date(that.data.ActivityEndDate + " " + that.data.ActivityEndTime + ":00").getTime() / 1000;
+    var curtime=Date.parse(new Date())/1000;
+    console.log(curtime)
+    if(curtime<ticketStart&&ticketStart<ticketEnd&&ticketEnd<ActivityStart&&ActivityStart<ActivityEnd) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
